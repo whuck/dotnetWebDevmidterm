@@ -1,0 +1,12 @@
+@using Module5.Models
+@model IEnumerable<Category>
+
+
+<div class="bg-primary m-1 p-1 text-white"><h4>Category Listing</h4></div>
+<ul>
+    @foreach (Category c in Model)
+    {
+        <li>@c.CategoryName - @c.Description </li>
+
+    }
+</ul>
