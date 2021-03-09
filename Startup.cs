@@ -11,6 +11,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Module5.Models;
 
+
+
 namespace Module5
 {
     public class Startup
@@ -40,7 +42,9 @@ namespace Module5
             {
                 app.UseDeveloperExceptionPage();
             }
-
+//need to add wwwroot folder to serve static files
+            app.UseStaticFiles();
+            
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
