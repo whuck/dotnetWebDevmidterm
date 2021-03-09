@@ -1,5 +1,5 @@
 @using Module5.Models
-@model IEnumerable<Product>
+@model IEnumerable<Discount>
 
 <div class="container-fluid">
     <div class="jumbotron">
@@ -8,5 +8,17 @@
         <hr class="my-4">
         <p>Proin euismod felis sit amet turpis posuere molestie. Nullam sapien tellus, vehicula id dapibus vitae, commodo nec turpis. Curabitur non enim a ante faucibus consequat et vitae lacus. Vivamus feugiat aliquet leo at tincidunt. Aenean in orci felis. Nullam commodo congue pulvinar. Nullam a vehicula orci. Mauris non sodales lectus, non lacinia lectus.</p>
         <a class="btn btn-primary btn-lg" href="#" role="button">Morbi nec ex erat.</a>
+        <div class="row row-cols-1 row-cols-lg-3">
+        @foreach (Discount d in Model)
+        {
+            <div class="col discounts px-2 py-4">
+                <h3>@d.Title</h3>
+                <div class="mb-4">
+                    @d.Description
+                </div>
+                <i>Discount expires: @d.EndTime.ToString("MM/dd/yyy")</i><br />
+                <a href="#" class="code" data-code="@d.Code" data-product="@d.Title"><i class="far fa-hand-point-right"></i> Discount Code</a>
+            </div>
+        }
     </div>
 </div>
