@@ -12,5 +12,6 @@ namespace Module5.Controllers
         public HomeController(NorthwindContext db) => _northwindContext = db;
         //public IActionResult Index() => View(_northwindContext.Discounts);
         public IActionResult Index() => View(_northwindContext.Discounts.Where(d => d.StartTime <= DateTime.Now && d.EndTime > DateTime.Now).Take(3));
+        
     }
 }

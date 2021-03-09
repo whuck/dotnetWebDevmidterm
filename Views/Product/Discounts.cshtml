@@ -1,0 +1,19 @@
+@using Module5.Models
+@model IEnumerable<Discount>
+
+
+<div class="bg-primary m-1 p-1 text-white"><h4>Discounts</h4></div>
+
+    <ul class="list-group">
+            @foreach (Discount d in Model)
+            {
+                <li class="list-group-item">
+                    <h3>@d.Title</h3>
+                    <div class="mb-4">
+                        @d.Description
+                    </div>
+                    <i>Discount expires: @d.EndTime.ToString("MM/dd/yyy")</i><br />
+                    <a href="#" class="code" data-code="@d.Code" data-product="@d.Title"><i class="far fa-hand-point-right"></i> Discount Code</a>
+                </li>
+            }
+    </ul>

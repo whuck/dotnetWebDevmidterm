@@ -9,6 +9,7 @@
         <p>Proin euismod felis sit amet turpis posuere molestie. Nullam sapien tellus, vehicula id dapibus vitae, commodo nec turpis. Curabitur non enim a ante faucibus consequat et vitae lacus. Vivamus feugiat aliquet leo at tincidunt. Aenean in orci felis. Nullam commodo congue pulvinar. Nullam a vehicula orci. Mauris non sodales lectus, non lacinia lectus.</p>
         <a class="btn btn-primary btn-lg" href="#" role="button">Morbi nec ex erat.</a>
         <div class="row row-cols-1 row-cols-lg-3">
+            
         @foreach (Discount d in Model)
         {
             <div class="col discounts px-2 py-4">
@@ -20,16 +21,5 @@
                 <a href="#" class="code" data-code="@d.Code" data-product="@d.Title"><i class="far fa-hand-point-right"></i> Discount Code</a>
             </div>
         }
-    </div>
-    <div id="toast" class="toast hide" style="position:absolute;top:50%;right:50%;">
-        <div class="toast-header">
-            <strong class="mr-auto" id="product"></strong>
-            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="toast-body">
-            Discount Code: <strong id="code">CODE</strong>
-        </div>
     </div>
 </div>
