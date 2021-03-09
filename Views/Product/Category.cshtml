@@ -3,10 +3,12 @@
 
 
 <div class="bg-primary m-1 p-1 text-white"><h4>Category Listing</h4></div>
-<ul>
+<ul class="list-group">
     @foreach (Category c in Model)
     {
-        <li>@c.CategoryName - @c.Description </li>
+        <li class="list-group-item">
+            <a asp-action="Index" asp-route-id="@c.CategoryId"> @c.CategoryName - @c.Description </a>
+        </li>
 
     }
 </ul>

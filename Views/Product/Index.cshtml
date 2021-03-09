@@ -1,0 +1,30 @@
+@using Module5.Models
+@model IEnumerable<Product>
+
+
+<div class="bg-primary m-1 p-1 text-white"><h4>Product Listing</h4></div>
+<ul class="list-group">
+    @foreach (Product p in Model)
+    {
+        <li class="list-group-item">
+            <h5>@p.ProductName</h5>
+            <ul class="list-group m-2">
+                <li class="list-group-item">
+                    Qty per unit: @p.QuantityPerUnit
+                </li>
+                <li class="list-group-item">
+                    Reorder level: @p.ReorderLevel
+                </li>
+                <li class="list-group-item">
+                    Unit Price: @p.UnitPrice
+                </li>
+                <li class="list-group-item">
+                    Units in Stock: @p.UnitsInStock
+                </li>
+                <li class="list-group-item">
+                    Units on Order: @p.UnitsOnOrder
+                </li>
+            </ul>
+        </li>
+    }
+</ul>
