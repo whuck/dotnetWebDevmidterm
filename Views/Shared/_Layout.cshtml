@@ -56,5 +56,43 @@
 
     <!-- Bootstrap -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+    <object data="media/toast.wav"></object>
+    <script>
+        $(function(){
+            // preload audio
+            var toast = new Audio('media/toast.wav');
+
+            $('.code').on('click', function(e) {
+                e.preventDefault();
+                // first pause the audio (in case it is still playing)
+                toast.pause();
+                // reset the audio
+                toast.currentTime = 0;
+                // play audio
+                toast.play();
+                $('#toast').toast({ autohide: false }).toast('show');
+
+                //grab data to put into toast
+                let discountCode = $(e.target).data('code');
+                let productName = $(e.target).data('product');
+
+                //grab toast elements to put data into
+                let toastCodeText = $("#toast div strong#code");
+                let toastProductName = $("#toast div strong#product");
+
+                //update toast elements w/ data
+                toastCodeText.html(discountCode);
+                toastProductName.html(productName);
+
+
+
+            });
+        });
+        $(document).keyup(function(e) {
+            if (e.key === "Escape") {
+                $('#toast').toast('hide');
+            }
+        });        
+    </script>
 </body>
 </html>
