@@ -10,5 +10,9 @@ namespace Module5.Models
         public DbSet<Discount> Discounts {get;set;}
 
         public DbSet<Customer> Customers {get;set;}
+        public void AddCustomer(Customer c) {
+            this.Add(c);
+            this.SaveChanges();
+        }
     }
 }

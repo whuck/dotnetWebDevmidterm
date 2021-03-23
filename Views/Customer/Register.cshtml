@@ -1,0 +1,11 @@
+@using Module5.Models
+@model IEnumerable<Customer>
+
+
+<div class="bg-primary m-1 p-1 text-white"><h4>New Customer Register</h4></div>
+<div class="form">
+    <form asp-controller="Customer" asp-action="AddCustomer" method="post">
+        <input type="text" name="CompanyName"/>
+        <button type="submit">asdf</button>
+    </form>
+</div>
