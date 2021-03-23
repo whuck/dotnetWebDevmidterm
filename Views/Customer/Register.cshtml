@@ -10,10 +10,12 @@
         public string Phone {get;set;}
         public string Fax {get;set;} *@
 <div class="bg-primary m-1 p-1 text-white"><h4>New Customer Register</h4></div>
+    <div asp-validation-summary="ModelOnly"></div>
     <form asp-controller="Customer" asp-action="AddCustomer" method="post">
-        <div class="form-group">
+        <div class="form-ggdfroup">
             <label asp-for="CompanyName"></label>
-            <input asp-for="CompanyName" placeHolder="Company Name"/>            
+            <input asp-for="CompanyName" placeHolder="Company Name"/>   
+            <span asp-validation-for="CompanyName" class="danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="Address"></label>

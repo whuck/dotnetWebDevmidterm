@@ -15,12 +15,20 @@ namespace Module5.Controllers
 
         [HttpPost]
         public IActionResult AddCustomer(Customer c) {
-            //Console.WriteLine(CompanyName);
-            //return View();
-            //var c = new Customer();
-            //c.CompanyName=CompanyName;
-            this._northwindContext.AddCustomer(c);
-            return Content($"hi {c.ToString()}");
+            if(ModelState.IsValid){
+                //check for dupes
+                var hasDupes = this._northwindContext.Customers.Any(p => p.CompanyName == c.CompanyName);
+                if(hasDupes) {
+                    return View("Register");
+                } else {
+                    this._northwindContext.AddCustomer(c);
+                    return Redirect("/Home/Index");
+                }
+                
+            } else {
+                //not valid form
+                return View("Register");
+            }
         }
         public IActionResult Register() => View();
 

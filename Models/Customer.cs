@@ -9,7 +9,7 @@ namespace Module5.Models
         public int CustomerId {get;set;}
         
         [Required]
-        [MinLength(1)]
+        [MinLength(1, ErrorMessage="Company Name is Required!")]
         public string CompanyName {get;set;}
         public string Address {get;set;}
         public string City {get;set;}
