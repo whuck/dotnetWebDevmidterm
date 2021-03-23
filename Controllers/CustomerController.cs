@@ -14,13 +14,13 @@ namespace Module5.Controllers
         public CustomerController(NorthwindContext db) => _northwindContext = db;
 
         [HttpPost]
-        public IActionResult AddCustomer(string CompanyName) {
-            Console.WriteLine(CompanyName);
+        public IActionResult AddCustomer(Customer c) {
+            //Console.WriteLine(CompanyName);
             //return View();
-            var c = new Customer();
-            c.CompanyName=CompanyName;
+            //var c = new Customer();
+            //c.CompanyName=CompanyName;
             this._northwindContext.AddCustomer(c);
-            return Content($"hi {CompanyName}");
+            return Content($"hi {c.ToString()}");
         }
         public IActionResult Register() => View();
 

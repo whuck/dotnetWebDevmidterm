@@ -1,11 +1,48 @@
 @using Module5.Models
-@model IEnumerable<Customer>
+@model Customer
 
-
+    @* public string CompanyName {get;set;}
+        public string Address {get;set;}
+        public string City {get;set;}
+        public string Region {get;set;}
+        public string PostalCode {get;set;}
+        public string Country {get;set;}
+        public string Phone {get;set;}
+        public string Fax {get;set;} *@
 <div class="bg-primary m-1 p-1 text-white"><h4>New Customer Register</h4></div>
-<div class="form">
     <form asp-controller="Customer" asp-action="AddCustomer" method="post">
-        <input type="text" name="CompanyName"/>
-        <button type="submit">asdf</button>
+        <div class="form-group">
+            <label asp-for="CompanyName"></label>
+            <input asp-for="CompanyName" placeHolder="Company Name"/>            
+        </div>
+        <div class="form-group">
+            <label asp-for="Address"></label>
+            <input asp-for="Address" placeHolder="Address"/>            
+        </div>
+        <div class="form-group">
+            <label asp-for="City"></label>
+            <input asp-for="City" placeHolder="City"/>            
+        </div>
+        <div class="form-group">
+            <label asp-for="Region"></label>
+            <input asp-for="Region" placeHolder="Region"/>            
+        </div>
+        <div class="form-group">
+            <label asp-for="PostalCode"></label>
+            <input asp-for="PostalCode" placeHolder="PostalCode"/>            
+        </div>
+        <div class="form-group">
+            <label asp-for="Country"></label>
+            <input asp-for="Country" placeHolder="Country"/>            
+        </div>
+        <div class="form-group">
+            <label asp-for="Phone"></label>
+            <input asp-for="Phone" placeHolder="Phone"/>            
+        </div>
+        <div class="form-group">
+            <label asp-for="Fax"></label>
+            <input asp-for="Fax" placeHolder="Fax"/>            
+        </div>
+        <button type="submit">Submit</button>
     </form>
-</div>
+
